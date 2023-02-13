@@ -64,5 +64,5 @@ group :development do
   # gem "spring"
 end
 
-gem 'devise'
 gem 'bootstrap', '~> 5.1'
+gem 'devise'
