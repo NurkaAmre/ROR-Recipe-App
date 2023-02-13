@@ -12,11 +12,13 @@
   </head>
 
   <body>
-    <div class="container">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
-    </div>
+    <%= render "users/header" %>
+      <div class="container", style="min-height: 85vh;">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
+    <%= render "users/footer" %>
   </body>
 
 </html>

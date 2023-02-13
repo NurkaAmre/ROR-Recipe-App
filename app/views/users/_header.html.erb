@@ -1,23 +1,26 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
-  <%= link_to 'Blog App', root_path, class: 'navbar-brand'%>
+  <%= link_to 'Recipe App', root_path, class: 'navbar-brand'%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-        <%= link_to 'Users', users_path, class: 'nav-link'%>
+        <%= link_to 'Foods', users_path, class: 'nav-link'%>
         </li>
+        <li class='nav-link'>Recipe</li>
+         <li class='nav-link'>Public Recipes</li>
+          <li class='nav-link'>Shopping List</li>
       </ul>
-      
-        <li class="d-flex justify-content-end ">
+        
+    </div>
+    <li class="d-flex justify-content-end ml-auto">
         <% if user_signed_in? %>
         <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-warning  text-end', data: { turbo: false } %>
         <% else %>
-        <%= link_to 'Sign In', new_user_session_path, class: 'nav-link'%>
+        <%= button_to 'Sign In', new_user_session_path, class: 'nav-link btn btn-warning text-end'%>
         <% end%>
         </li>
-    </div>
   </div>
 </nav>
