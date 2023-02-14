@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+
+ .fa-hand-o-right {
+  animation: moveHand 2s infinite;
+}
+
+@keyframes moveHand {
+  0% {
+    transform: translateX(-25px);
+  }
+  50% {
+    transform: translateX(50px) translateY(0);
+  }
+  100% {
+    transform: translateX(-25px);
+  }
+}
