@@ -1,5 +1,5 @@
 <%= form_with(model: recipe) do |form| %>
-  <% if recipes.errors.any? %>
+  <% if recipe.errors.any? %>
     <div style="color: red", class="field mb-3">
       <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
 

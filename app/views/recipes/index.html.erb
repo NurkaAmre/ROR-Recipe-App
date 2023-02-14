@@ -6,9 +6,9 @@
   <% @recipes.each do |recipe| %>
     <%= render recipe %>
     <p>
-      <%= link_to "Show this recipe", recipe %>
+      <%= link_to "Show this recipe", recipe , class: "btn btn-warning mt-10 mb-10 text-decoration-none"%>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New recipe", new_recipe_path %>
+<%= link_to "New recipe", new_recipe_path, class: "btn btn-warning mt-10 mb-10 text-decoration-none" %>

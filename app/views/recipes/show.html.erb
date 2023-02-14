@@ -3,8 +3,8 @@
 <%= render @recipe %>
 
 <div>
-  <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> |
-  <%= link_to "Back to recipes", recipes_path %>
+  <%# <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> 
+  <%= link_to "Back to recipes", recipes_path, class: "btn btn-warning mt-10 mb-10 text-decoration-none" %>
 
   <%= button_to "Destroy this recipe", @recipe, method: :delete %>
 </div>
