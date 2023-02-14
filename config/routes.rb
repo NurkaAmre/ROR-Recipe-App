@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   
   resources :users, only: [:index, :show]
     # resources :posts, only: [:index, :show, :new, :create, :destroy] do
-       resources :recipes, only: [:index, :show, :create, :edit, :destroy]
+       resources :recipes, only: [:index, :show, :create, :edit, :delete]
     #   resources :likes, only: [:create]
     # end
     

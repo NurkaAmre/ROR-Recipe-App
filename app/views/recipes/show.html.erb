@@ -6,7 +6,7 @@
       <%= link_to "Back to recipes", recipes_path, class: "btn btn-secondary m-2 mb-10 text-decoration-none" %>
     </div>
     <div class="ms-auto m-1 order-last">
-       <h3><%= button_to "Delete", @recipe, method: :delete,  class: 'btn btn-secondary', data: { turbo: false }  %></h3>
+       <h3><%= button_to "Delete", recipe_path(@recipe.id), method: :delete,  class: 'btn btn-secondary', data: { turbo: false }  %></h3>
     </div>
   </div>
   <h1 class="text-center m-2"><%= @recipe.name %></h1>
