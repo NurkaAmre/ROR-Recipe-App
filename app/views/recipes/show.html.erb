@@ -1,10 +1,41 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @recipe %>
+<div class="container bg-warning rounded-top">
+  <div class="d-flex">
+    <div>
+      <%= link_to "Back to recipes", recipes_path, class: "btn btn-secondary m-2 mb-10 text-decoration-none" %>
+    </div>
+    <div class="ms-auto m-1 order-last">
+       <h3><%= button_to "Delete", @recipe, method: :delete,  class: 'btn btn-secondary', data: { turbo: false }  %></h3>
+    </div>
+  </div>
+  <h1 class="text-center m-2"><%= @recipe.name %></h1>
+    <div class="container d-flex justify-content-between">
+      <div class="mt-4" style="margin-left: 60px;">
+          <h5 class="card-title text-decoration-none m-3 text-dark">Preparation time: <%= @recipe.preparation_time %>hour</h5> 
+          <h5 class="card-title text-decoration-none m-3 text-dark">Cooking time: <%= @recipe.cooking_time %>hour</h5> 
+        <div class="m-3"> 
+          <h3>Steps goes here...</h3>
+        </div>
+        <h3><%= link_to "Generate shopping list", '#', class: "btn btn-dark mt-10 m-3 text-decoration-none" %></h3>
+      </div>
+      
+      <div class="m-4">
+        <div class="d-flex gap-2 mb-5 mt-4">
+          <h5>Public</h5>
+          <input type="checkbox">
+        </div>
+        <h3><%= link_to "Add Ingredients", '#', class: "btn btn-dark mt-5 mb=0 m-2 text-decoration-none" %></h3>
+      </div>
+    
+    </div>
+    <hr lass="my-4 border-0 border-top border-4 border-dark">
 
-<div>
-  <%# <%= link_to "Edit this recipe", edit_recipe_path(@recipe) %> 
-  <%= link_to "Back to recipes", recipes_path, class: "btn btn-warning mt-10 mb-10 text-decoration-none" %>
-
-  <%= button_to "Destroy this recipe", @recipe, method: :delete %>
+    <div>
+    <h1>Food list goes here...</h1>
+    </div>
 </div>
+  
+
+ 
+
