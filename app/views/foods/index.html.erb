@@ -1,14 +1,27 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Foods</h1>
+<div class="container rounded-top">
+  <div class="container d-flex gap-5 align-items-center">
+    <h1>Hey, <%= current_user.name %><span>&#x1F468;&#x200D;&#x1F373;</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-hand-o-right"></i></h1>
 
-<div id="foods">
+    <div class="ms-auto m-1">
+      <%= link_to "Add New food", new_food_path, class: "btn btn-warning mt-10 mb-10 text-end m-3 me-auto order-last" %>
+    </div>
+  </div>
+
   <% @foods.each do |food| %>
-    <%= render food %>
-    <p>
-      <%= link_to "Show this food", food %>
-    </p>
+    <div class='shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
+      <h3 class="card-title text-decoration-none m-3 text-dark"><%= food.name %></h3>
+      <div class="d-flex gap-3">
+        <h3><%= button_to "Remove", food, method: :delete,  class: 'btn btn-warning m-2 text-end', data: { turbo: false }  %></h3>
+      <%= render food %>
+      <h3>
+        <%= link_to "Show this food", food, class: "btn btn-warning mt-10 m-2 text-decoration-none" %>
+      </h3>
+      </div>
+      <div>
+        <h6 class="text-dark m-3"><%= recipe.name %><h6>
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New food", new_food_path %>
