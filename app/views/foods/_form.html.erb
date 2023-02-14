@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field mb-3">
     <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="field mb-3">
     <%= form.label :measurement_unit, style: "display: block" %>
-    <%= form.text_field :measurement_unit %>
+    <%= form.text_field :measurement_unit, , class: "form-control" %>
   </div>
 
-  <div>
+  <div class="field mb-3">
     <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="field mb-3">
     <%= form.label :quantity, style: "display: block" %>
-    <%= form.number_field :quantity %>
+    <%= form.number_field :quantity, class: "form-control" %>
   </div>
 
-  <div>
+  <div class="btn btn-dark mb-3 ml-5">
     <%= form.submit %>
   </div>
 <% end %>
