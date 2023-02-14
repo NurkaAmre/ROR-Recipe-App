@@ -11,9 +11,6 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
-  def edit
-  end
-
   def create
     @recipe = current_user.recipes.new(recipe_params)
       if @recipe.save
