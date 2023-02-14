@@ -65,5 +65,5 @@ group :development do
 end
 
 gem 'bootstrap', '~> 5.1'
-gem 'devise'
 gem 'cancancan'
+gem 'devise'
