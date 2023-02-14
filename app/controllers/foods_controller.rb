@@ -20,7 +20,7 @@ class FoodsController < ApplicationController
 
     respond_to do |format|
       if @food.save
-        redirect_to foods_path, notice: 'Food was successfully created.'
+        format.html { redirect_to foods_path, notice: 'Food was successfully created.' }
       else
         flash[:alert] = 'Oops, Loser try again!'
       end
