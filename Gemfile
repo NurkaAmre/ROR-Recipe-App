@@ -66,3 +66,4 @@ end
 
 gem 'bootstrap', '~> 5.1'
 gem 'devise'
+gem 'cancancan'
