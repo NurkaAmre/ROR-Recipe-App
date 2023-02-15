@@ -1,6 +1,6 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="container bg-warning rounded-top">
+<div class="container bg-warning rounded-top pb-4">
   <div class="d-flex">
     <div>
       <%= link_to "Back to recipes", recipes_path, class: "btn btn-secondary m-2 mb-10 text-decoration-none" %>
@@ -31,9 +31,44 @@
     </div>
     <hr lass="my-4 border-0 border-top border-4 border-dark">
 
-    <div>
-    <h1>Food list goes here...</h1>
+    <div class='shadow-lg p-3 bg-body-tertiary'>
+    <div class="d-flex justify-content-between foods_title">
+      <h5>
+        Food
+      </h5>
+      <h5>
+        Quantity
+      </h5>
+      <h5>
+        Value
+      </h5>
+      <h5>
+        Actions
+      </h5>
     </div>
+  </div>
+
+  <% current_user.foods.each do |food| %>
+    <div class='shadow-lg p-3 bg-body-tertiary'>
+      <div class="d-flex align-items-center">
+        <div id="<%= dom_id food %>" class="d-flex justify-content-between foods">
+          <p>
+            <%= food.name %>
+          </p>
+          <p>
+            <%= food.quantity %> <%= food.measurement_unit %>
+          </p>
+          <p>
+            $<%= food.quantity * food.price %>
+          </p>
+        </div>
+        <h3 class="d-flex">
+          <%= button_to "Modify", edit_food_path(food), method: :get, class: 'btn btn-warning m-2 text-end modify', data: { turbo: false } %>
+          <%= button_to "Remove", food, method: :delete,  class: 'btn btn-warning m-2 text-end delete', data: { turbo: false }  %>
+        </h3>
+      </div>
+    </div>
+  <% end %>
 </div>
   
 
