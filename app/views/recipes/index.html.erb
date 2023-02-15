@@ -9,18 +9,16 @@
   
   <% @recipes.each do |recipe|%>
   <div class='shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-danger d-flex'>
-    <%# <div class="col-md-6 d-flex gap-5 bg-primary text-wrap"> %>
-      <div class='card-body'>
-        <h3 class="card-title text-decoration-none m-3 text-dark"><%= recipe.name %></h3> 
-        <div class="d-flex gap-3"> 
-          <h3><%= button_to "Remove", recipe, method: :delete,  class: 'btn btn-warning m-2 text-end', data: { turbo: false }  %></h3>
-          <h3><%= link_to "Show details", recipe , class: "btn btn-warning mt-10 m-2 text-decoration-none" %></h3>
-        </div>
+    <div class='card-body'>
+      <h3 class="card-title text-decoration-none m-3 text-dark"><%= recipe.name %></h3> 
+      <div class="d-flex gap-3"> 
+        <h3><%= button_to "Remove", recipe, method: :delete,  class: 'btn btn-warning m-2 text-end', data: { turbo: false }  %></h3>
+        <h3><%= link_to "Show details", recipe , class: "btn btn-warning mt-10 m-2 text-decoration-none" %></h3>
       </div>
-      <div class="card-body m-2 w-50">
-        <p class="text-dark"  style="overflow-wrap: break-word;"><%= recipe.description %><p>
-      </div>
-    <%# </div> %>
+    </div>
+    <div class="card-body m-2 w-50">
+      <p class="text-dark"  style="overflow-wrap: break-word;"><%= recipe.description %><p>
+    </div>
   </div>
   <% end %>
 </div>
