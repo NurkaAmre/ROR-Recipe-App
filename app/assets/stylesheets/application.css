@@ -47,19 +47,19 @@
 }
 
 .foods {
-  width: 80%;
+  width: 75%;
 }
 
 .foods_title {
   color: rgba(44, 29, 0, 0.418);
-  width: 99.8%;
+  width: 100%;
 }
 
 .foods p {
-  width: 25%;
+  width: 33.33%;
   margin: 0;
 }
 
 .foods_title h5 {
-  width: 20%;
+  width: 25%;
 }
