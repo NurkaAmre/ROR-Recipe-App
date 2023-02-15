@@ -14,8 +14,10 @@
         </li>
         <li class='nav-link'>Public Recipes</li>
         <li class='nav-link'>Shopping List</li>
-        <li class='nav-link text-white'><%=current_user.name%></li>
-        <li class="d-flex ml-auto mb-3 mt-3">
+        <% if current_user %>
+          <li class='nav-link text-white'><%= current_user.name %></li>
+        <% end %>
+        <li class="d-flex ml-auto mb-3 mt-2">
           <% if user_signed_in? %>
             <%= button_to 'Sign Out', destroy_user_session_path, method: :delete, class: 'btn btn-warning  text-end sign', data: { turbo: false } %>
           <% else %>
