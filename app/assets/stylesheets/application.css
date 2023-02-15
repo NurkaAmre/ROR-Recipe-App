@@ -45,3 +45,21 @@
     align-items: start;
   }
 }
+
+.foods {
+  width: 80%;
+}
+
+.foods_title {
+  color: rgba(44, 29, 0, 0.418);
+  width: 99.8%;
+}
+
+.foods p {
+  width: 25%;
+  margin: 0;
+}
+
+.foods_title h5 {
+  width: 20%;
+}
