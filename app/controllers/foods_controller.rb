@@ -14,6 +14,10 @@ class FoodsController < ApplicationController
     @food = Food.new
   end
 
+  def edit
+    @food = Food.find(params[:id])
+  end
+
   # POST /foods or /foods.json
   def create
     @food = current_user.foods.new(food_params)
