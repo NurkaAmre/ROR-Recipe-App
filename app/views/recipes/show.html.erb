@@ -3,10 +3,10 @@
 <div class="container bg-warning rounded-top pb-4">
   <div class="d-flex">
     <div>
-      <%= link_to "Back to recipes", recipes_path, class: "btn btn-secondary m-2 mb-10 text-decoration-none" %>
+      
     </div>
     <div class="ms-auto m-1 order-last">
-       <h3><%= button_to "Delete", recipe_path(@recipe.id), method: :delete,  class: 'btn btn-secondary', data: { turbo: false }  %></h3>
+       <h3><%= button_to "X", recipe_path(@recipe.id), method: :delete,  class: 'btn btn-secondary', data: { turbo: false }  %></h3>
     </div>
   </div>
   <h1 class="text-center m-2"><%= @recipe.name %></h1>
@@ -48,23 +48,23 @@
     </div>
   </div>
 
-  <% current_user.foods.each do |food| %>
+  <% @recipe_foods.each do |recipefood| %>
     <div class='shadow-lg p-3 bg-body-tertiary'>
       <div class="d-flex align-items-center">
-        <div id="<%= dom_id food %>" class="d-flex justify-content-between foods">
+        <div class="d-flex justify-content-between foods">
           <p>
-            <%= food.name %>
+            <%= recipefood.food.name %>
           </p>
           <p>
-            <%= food.quantity %> <%= food.measurement_unit %>
+            <%= recipefood.quantity %> <%= recipefood.food.measurement_unit %>
           </p>
           <p>
-            $<%= food.quantity * food.price %>
+            $<%= recipefood.quantity * recipefood.food.price %>
           </p>
         </div>
         <h3 class="d-flex">
-          <%= button_to "Modify", edit_food_path(food), method: :get, class: 'btn btn-warning m-2 text-end modify', data: { turbo: false } %>
-          <%= button_to "Remove", food, method: :delete,  class: 'btn btn-warning m-2 text-end delete', data: { turbo: false }  %>
+          <%= button_to "Modify", edit_food_path(recipefood.food), method: :get, class: 'btn btn-warning m-2 text-end modify', data: { turbo: false } %>
+          <%= button_to "Remove", recipe_food_path(recipefood), method: :delete,  class: 'btn btn-warning m-2 text-end delete', data: { turbo: false }  %>
         </h3>
       </div>
     </div>

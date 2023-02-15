@@ -9,7 +9,7 @@
   
   <% @recipes.each do |recipe|%>
   <div class='shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
-    <div class="col-md-8 d-flex">
+    <div class="col-md-6 d-flex gap-5">
       <div class='card-body'>
         <h3 class="card-title text-decoration-none m-3 text-dark"><%= recipe.name %></h3> 
         <div class="d-flex gap-3"> 
@@ -17,8 +17,8 @@
           <h3><%= link_to "Show details", recipe , class: "btn btn-warning mt-10 m-2 text-decoration-none" %></h3>
         </div>
       </div>
-      <div>
-        <h6 class="text-dark m-3"><%= recipe.description %><h6>
+      <div class="card-body m-5">
+        <p class="text-dark ml-5"><%= recipe.description %><p>
       </div>
     </div>
   </div>
