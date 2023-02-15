@@ -14,7 +14,7 @@
  *= require_self
  */
 
- .fa-hand-o-right {
+.fa-hand-o-right {
   animation: moveHand 2s infinite;
 }
 
@@ -22,20 +22,21 @@
   0% {
     transform: translateX(-25px);
   }
+
   50% {
     transform: translateX(50px) translateY(0);
   }
+
   100% {
     transform: translateX(-25px);
   }
 }
 
-
 @media (min-width: 768px) { /* target screen sizes above 768px (PC) */
   .navbar-nav {
     display: flex;
     align-items: center;
-    gap: 20px;  
+    gap: 20px;
   }
 }
 
