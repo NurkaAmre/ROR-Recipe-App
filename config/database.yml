@@ -26,9 +26,9 @@ default: &default
 development:
   <<: *default
   database: ROR_Recipe_App_development
-  username: postgres
-  password: Bleu111111
-  port: 5433
+  # username: postgres
+  # password: Bleu111111
+  # port: 5433
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -87,5 +87,5 @@ test:
 production:
   <<: *default
   database: ROR_Recipe_App_production
-  username: ROR_Recipe_App
+  # username: ROR_Recipe_App
  
