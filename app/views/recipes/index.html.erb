@@ -8,8 +8,8 @@
   <h6 class="m-3">Here is your recipes list go cook something tasty <span>&#x1F60B;</span></h6><br>
   
   <% @recipes.each do |recipe|%>
-  <div class='shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
-    <div class="col-md-6 d-flex gap-5">
+  <div class='shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-danger d-flex'>
+    <%# <div class="col-md-6 d-flex gap-5 bg-primary text-wrap"> %>
       <div class='card-body'>
         <h3 class="card-title text-decoration-none m-3 text-dark"><%= recipe.name %></h3> 
         <div class="d-flex gap-3"> 
@@ -17,10 +17,10 @@
           <h3><%= link_to "Show details", recipe , class: "btn btn-warning mt-10 m-2 text-decoration-none" %></h3>
         </div>
       </div>
-      <div class="card-body m-5">
-        <p class="text-dark ml-5"><%= recipe.description %><p>
+      <div class="card-body m-2 w-50">
+        <p class="text-dark"  style="overflow-wrap: break-word;"><%= recipe.description %><p>
       </div>
-    </div>
+    <%# </div> %>
   </div>
   <% end %>
 </div>
