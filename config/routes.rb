@@ -6,12 +6,8 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     passwords: 'users/passwords'
   }
-  root "users#index"
+  root "foods#index"
   
   resources :users, only: [:index, :show]
-    # resources :posts, only: [:index, :show, :new, :create, :destroy] do
-       resources :recipes, only: [:index, :show, :create, :edit, :delete]
-    #   resources :likes, only: [:create]
-    # end
-    
+    resources :recipes, only: [:index, :show, :create, :edit, :delete]  
 end
