@@ -35,17 +35,13 @@
   .navbar-nav {
     display: flex;
     align-items: center;
-    gap: 10px;    
-  }
-
-  .sign {
-    
+    gap: 20px;  
   }
 }
 
 @media (max-width: 768px) { /* target screen sizes below 7681px (mobile) */
   .navbar-nav {
-    display: block !important; /* or any other display property that works for your layout */
-    align-items: initial !important; /* reset align-items to default value */
+    display: flex;
+    align-items: start;
   }
 }
