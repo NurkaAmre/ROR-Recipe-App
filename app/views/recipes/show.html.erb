@@ -1,33 +1,33 @@
 <p style="color: green"><%= notice %></p>
 
-<div class="container bg-warning rounded-top pb-4 mb-4">
+<div class="container bg-warning rounded-top p-4 mb-4">
   <div class="d-flex">
     <div>
       
     </div>
     <div class="ms-auto m-1 order-last">
-      <h3><%= link_to recipes_path, class: 'color-dark text-decoration-none', data: { turbo: false } do %>
+      <h3><%= link_to recipes_path, class: 'text-decoration-none color-dark', data: { turbo: false } do %>
         <span aria-hidden="true">&times;</span>
       <% end %></h3>
     </div>
   </div>
   <h1 class="text-center m-2"><%= @recipe.name %></h1>
     <div class="container d-flex justify-content-between">
-      <div class="mt-4" style="margin-left: 60px;">
-          <h5 class="card-title text-decoration-none m-3 text-dark">Preparation time: <%= @recipe.preparation_time %>hour</h5> 
-          <h5 class="card-title text-decoration-none m-3 text-dark">Cooking time: <%= @recipe.cooking_time %>hour</h5> 
-        <div class="m-3"> 
-          <h3>Steps goes here...</h3>
+      <div class="mt-4 row w-50">
+          <h5 class="card-title text-decoration-none m-2 text-dark">Preparation time: <%= @recipe.preparation_time %>hour</h5> 
+          <h5 class="card-title text-decoration-none m-2 text-dark">Cooking time: <%= @recipe.cooking_time %>hour</h5> 
+        <div class="m-2" style="overflow-wrap: break-word;"> 
+          <h5>Steps: </h5><p><%= @recipe.description %></p>
         </div>
         <h3><%= link_to "Generate shopping list", '#', class: "btn btn-dark mt-10 m-3 text-decoration-none" %></h3>
       </div>
       
-      <div class="m-4">
+      <div class="mb-0 w-50 p-3 d-flex flex-column align-items-end justify-content-between">
         <div class="d-flex gap-2 mb-5 mt-4">
           <h5>Public</h5>
           <input type="checkbox">
         </div>
-        <h3><%= link_to "Add Ingredients", '#', class: "btn btn-dark mt-5 mb=0 m-2 text-decoration-none" %></h3>
+        <h3><%= link_to "Add Ingredients", '#', class: "btn btn-dark text-decoration-none" %></h3>
       </div>
     
     </div>
