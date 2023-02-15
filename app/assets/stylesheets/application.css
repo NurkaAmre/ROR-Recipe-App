@@ -13,3 +13,54 @@
  *= require_tree .
  *= require_self
  */
+
+.fa-hand-o-right {
+  animation: moveHand 2s infinite;
+}
+
+@keyframes moveHand {
+  0% {
+    transform: translateX(-25px);
+  }
+
+  50% {
+    transform: translateX(50px) translateY(0);
+  }
+
+  100% {
+    transform: translateX(-25px);
+  }
+}
+
+@media (min-width: 768px) { /* target screen sizes above 768px (PC) */
+  .navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) { /* target screen sizes below 7681px (mobile) */
+  .navbar-nav {
+    display: flex;
+    align-items: start;
+  }
+}
+
+.foods {
+  width: 75%;
+}
+
+.foods_title {
+  color: rgba(44, 29, 0, 0.418);
+  width: 100%;
+}
+
+.foods p {
+  width: 33.33%;
+  margin: 0;
+}
+
+.foods_title h5 {
+  width: 25%;
+}

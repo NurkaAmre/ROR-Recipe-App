@@ -1,0 +1,9 @@
+<div class="container bg-warning">
+  <div class="d-flex align-items-center">
+    <h1>New food</h1>
+    <div class="ms-auto m-3">
+      <%= link_to "Back to foods", foods_path, class: "btn btn-dark mt-10 mb-10 text-decoration-none" %>
+    </div>
+  </div>
+  <%= render "form", food: @food %>
+</div>
