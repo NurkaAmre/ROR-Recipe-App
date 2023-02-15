@@ -1,4 +1,4 @@
-<div class="container rounded-top">
+<div class="container rounded-top mb-4">
   <div class="container d-flex gap-5 align-items-center">
     <h1>Hey, <%= current_user.name %><span>&#x1F468;&#x200D;&#x1F373;</span>&nbsp;&nbsp;&nbsp;<i class="fa fa-hand-o-right"></i></h1>
 
@@ -7,18 +7,28 @@
     </div>
   </div>
 
+  <div class='shadow-lg p-3 bg-body-tertiary'>
+    <div class="d-flex justify-content-between foods_title">
+      <h5>
+        Food
+      </h5>
+      <h5>
+        Measurement unit
+      </h5>
+      <h5>
+        Unit price
+      </h5>
+      <h5>
+        Actions
+      </h5>
+    </div>
+  </div>
+
   <% @foods.each do |food| %>
-    <div class='shadow-lg p-3 mb-5 bg-body-tertiary rounded'>
-      <h3 class="card-title text-decoration-none m-3 text-dark"><%= food.name %></h3>
-      <div class="d-flex gap-3">
-        <h3><%= button_to "Remove", food, method: :delete,  class: 'btn btn-warning m-2 text-end', data: { turbo: false }  %></h3>
-      <%= render food %>
-      <h3>
-        <%= link_to "Show this food", food, class: "btn btn-warning mt-10 m-2 text-decoration-none" %>
-      </h3>
-      </div>
-      <div>
-        <h6 class="text-dark m-3"><%= food.name %><h6>
+    <div class='shadow-lg p-3 bg-body-tertiary'>
+      <div class="d-flex align-items-center">
+        <%= render food %>
+        <h3><%= button_to "Delete", food, method: :delete,  class: 'btn btn-warning m-2 text-end delete', data: { turbo: false }  %></h3>
       </div>
     </div>
   <% end %>
