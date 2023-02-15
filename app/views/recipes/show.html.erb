@@ -14,8 +14,10 @@
   <h1 class="text-center m-2"><%= @recipe.name %></h1>
     <div class="container d-flex justify-content-between">
       <div class="mt-4 row w-50">
-          <h5 class="card-title text-decoration-none m-2 text-dark">Preparation time: <%= @recipe.preparation_time %>hour</h5> 
-          <h5 class="card-title text-decoration-none m-2 text-dark">Cooking time: <%= @recipe.cooking_time %>hour</h5> 
+          <h5 class="card-title text-decoration-none m-2 text-dark">Preparation time: <%= @recipe.preparation_time %> <%= @recipe.preparation_time <= 1 ? 'hour' : 'hours' %> </h5> 
+          <h5 class="card-title text-decoration-none m-2 text-dark">
+            Cooking time: <%= @recipe.cooking_time %> <%= @recipe.cooking_time <= 1 ? 'hour' : 'hours' %>
+          </h5>
         <div class="m-2" style="overflow-wrap: break-word;"> 
           <h5>Steps: </h5><p><%= @recipe.description %></p>
         </div>
