@@ -47,11 +47,25 @@
   }
 }
 
+.fooods {
+  width: 80%;
+}
+
+.fooods p {
+  width: 25%;
+  margin: 0;
+}
+
+.fooods_title h5 {
+  width: 20%;
+}
+
 .foods {
   width: 75%;
 }
 
-.foods_title {
+.foods_title,
+.fooods_title {
   color: rgba(44, 29, 0, 0.418);
   width: 100%;
 }
