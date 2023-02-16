@@ -1,4 +1,4 @@
-<%= form_with(model: food, url: foods_path, local: true) do |form| %>
+<%= form_with(model: food ) do |form| %>
   <% if food.errors.any? %>
     <div style="color: red", class="field mb-3">
       <h2><%= pluralize(food.errors.count, "error") %> prohibited this food from being saved:</h2>
