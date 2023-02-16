@@ -9,7 +9,7 @@ RSpec.describe 'The recipes index page', type: :feature do
                                 preparation_time: 1, cooking_time: 2, user_id: @user1.id)
 
       @recipe2 = Recipe.create!(name: 'Apple Pie', description: 'Apple pie is apple pie', public: false,
-                                preparation_time: 1, cooking_time: 2,user_id: @user1.id)
+                                preparation_time: 1, cooking_time: 2, user_id: @user1.id)
 
       visit 'users/sign_in'
       fill_in 'Email', with: 'amre@gmail.com'
