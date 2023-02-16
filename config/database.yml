@@ -15,6 +15,8 @@
 # gem "pg"
 #
 default: &default
+  username: postgres
+  password: '#Dovaridu90'
   adapter: postgresql
   encoding: unicode
   # For details on connection pooling, see Rails configuration guide
@@ -24,12 +26,15 @@ default: &default
 development:
   <<: *default
   database: ROR_Recipe_App_development
+  # username: postgres
+  # password: Bleu111111
+  # port: 5433
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
   # When left blank, postgres will use the default role. This is
   # the same name as the operating system user running Rails.
-  #username: ROR_Recipe_App
+  #username: blog_app
 
   # The password associated with the postgres role (username).
   #password:
@@ -82,5 +87,5 @@ test:
 production:
   <<: *default
   database: ROR_Recipe_App_production
-  username: ROR_Recipe_App
-  password: <%= ENV["ROR_RECIPE_APP_DATABASE_PASSWORD"] %>
+  # username: ROR_Recipe_App
+ 

@@ -1,0 +1,25 @@
+<div class="container bg-dark text-light rounded-top px-4 pb-2 mb-4">
+  <div class="container d-flex gap-5">
+    <h1>Welcome <%= current_user.name %><span>&#x1F468;&#x200D;&#x1F373;</span></h1>
+    <div class="ms-auto m-1">
+      <%= button_to "Add new recipe", new_recipe_path, method: :get, class: "btn btn-warning mt-10 mb-10 text-end m-3 me-auto order-last" %>
+    </div>
+  </div>
+  <h6 class="m-3">Here is your recipes list go cook something tasty <span>&#x1F60B;</span></h6><br>
+  
+  <% @recipes.each do |recipe|%>
+  <div class='shadow-lg p-3 mb-5 bg-body-tertiary rounded bg-danger d-flex'>
+    <div class='card-body'>
+      <h3 class="card-title text-decoration-none m-3 text-dark"><%= recipe.name %></h3> 
+      <div class="d-flex gap-3"> 
+        <h3><%= button_to "Remove", recipe, method: :delete,  class: 'btn btn-warning m-2 text-end', data: { turbo: false }  %></h3>
+        <h3><%= link_to "Show details", recipe_path(recipe.id), class: "btn btn-warning mt-10 m-2 text-decoration-none" %></h3>
+      </div>
+    </div>
+    <div class="card-body m-2 w-50">
+      <p class="text-dark"  style="overflow-wrap: break-word;"><%= recipe.description %><p>
+    </div>
+  </div>
+  <% end %>
+</div>
+

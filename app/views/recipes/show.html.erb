@@ -1,0 +1,81 @@
+<div class="container bg-warning rounded-top p-4 mb-4">
+  <div class="d-flex">
+    <div>
+      
+    </div>
+    <div class="ms-auto m-1 order-last">
+      <h3><%= link_to recipes_path, class: 'text-decoration-none color-dark', data: { turbo: false } do %>
+        <span aria-hidden="true">&times;</span>
+      <% end %></h3>
+    </div>
+  </div>
+  <h1 class="text-center m-2"><%= @recipe.name %></h1>
+    <div class="container d-flex justify-content-between">
+      <div class="mt-4 row w-50">
+          <h5 class="card-title text-decoration-none m-2 text-dark">Preparation time: <%= @recipe.preparation_time %> <%= @recipe.preparation_time <= 1 ? 'hour' : 'hours' %> </h5> 
+          <h5 class="card-title text-decoration-none m-2 text-dark">
+            Cooking time: <%= @recipe.cooking_time %> <%= @recipe.cooking_time <= 1 ? 'hour' : 'hours' %>
+          </h5>
+        <div class="m-2" style="overflow-wrap: break-word;"> 
+          <h5>Steps: </h5><p><%= @recipe.description %></p>
+        </div>
+        <h3><%= link_to "Generate shopping list", recipe_shopping_lists_path(@recipe), class: "btn btn-dark mt-10 m-3 text-decoration-none" %></h3>
+      </div>
+      
+      <div class="mb-0 w-50 p-3 d-flex flex-column align-items-end justify-content-between">
+        <div class="d-flex gap-2 mb-5 mt-4">
+          <% if @recipe.public %>
+            <h5>Public <i class="fa fa-toggle-on"></i></h5>
+          <% elsif !@recipe.public %>
+            <h5>Not public <i class="fa fa-toggle-off"></i></h5>
+          <% end %>
+        </div>
+        <h3><%= link_to "Add Ingredients", new_recipe_recipe_food_path(@recipe.id), class: "btn btn-dark text-decoration-none" %></h3>
+      </div>
+    
+    </div>
+    <hr lass="my-4 border-0 border-top border-4 border-dark">
+
+    <div class='shadow-lg p-3 bg-body-tertiary'>
+    <div class="d-flex justify-content-between foods_title">
+      <h5>
+        Food
+      </h5>
+      <h5>
+        Quantity
+      </h5>
+      <h5>
+        Value
+      </h5>
+      <h5>
+        Actions
+      </h5>
+    </div>
+  </div>
+
+  <% @recipe_foods.each do |recipefood| %>
+    <div class='shadow-lg p-3 bg-body-tertiary'>
+      <div class="d-flex align-items-center">
+        <div class="d-flex justify-content-between foods">
+          <p>
+            <%= recipefood.food.name %>
+          </p>
+          <p>
+            <%= recipefood.quantity %> <%= recipefood.food.measurement_unit %>
+          </p>
+          <p>
+            $<%= recipefood.quantity * recipefood.food.price %>
+          </p>
+        </div>
+        <h3 class="d-flex">
+          <p class="btn btn-warning m-2 text-end delete">Modify<p>
+          <%= button_to 'Remove', recipe_recipe_food_path(@recipe.id, recipefood.id), class: "btn btn-warning m-2 text-end delete", method: :delete %>
+        </h3>
+      </div>
+    </div>
+  <% end %>
+</div>
+  
+
+ 
+
