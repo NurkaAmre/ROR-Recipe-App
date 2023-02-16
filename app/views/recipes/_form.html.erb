@@ -30,6 +30,11 @@
     <%= form.label :cooking_time, style: "display: block" %>
     <%= form.number_field :cooking_time, class: "form-control" %>
   </div>
+
+  <div>
+    <%= form.label :public %>
+    <%= form.check_box :public %>
+  </div>
    
   <div class='container d-flex justify-content-center gap-5'>
       <div class="btn mt-10 mb-10 text-decoration-none">
@@ -37,4 +42,3 @@
     </div>
   </div>
 <% end %>
-<%#  %>

@@ -1,9 +1,10 @@
 <div class=container>
   <h1 class="text-center my-4">Public Recipes</h1>
-  <% if current_user.recipes.empty? %>
+  <% if @recipes.empty? %>
     <p>No public recipes have been added yet</p>
   <% end %>
- <% current_user.recipes.each do |recipe| %>
+  <% @recipes.each do |recipe| %>
+    <% if recipe.public %>
       <div class="border border-gray border-1 shadow-lg bg-body-tertiary py-4 px-5 mb-4 d-flex">
         <div class="col-5">
           <h3><%= link_to "#{recipe.name}", recipe_path(recipe.id), class: "links" %></h3>
@@ -15,6 +16,7 @@
         </div>
       </div>
     <% end %>
+  <% end %>
   <div class="d-flex justify-content-center align-items-center mb-4">
     <%= link_to "Back to recipe foods", recipes_path, class: "btn btn-warning text-dark mt-10 mb-10 text-decoration-none p-3" %>
   </div>
