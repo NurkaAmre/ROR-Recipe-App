@@ -12,8 +12,8 @@
          <li class="nav-item">
         <%= link_to 'Recipes', recipes_path, class: 'nav-link'%>
         </li>
-        <li class='nav-link'>Public Recipes</li>
-        <li class='nav-link'>Shopping List</li>
+        <li><%= link_to "Public Recipes", public_recipes_path, class: "text-decoration-none nav-link"%></li>
+        <%# <li class='nav-link'>Shopping List</li> %>
         <% if current_user %>
           <li class='nav-link text-white'><%= current_user.name %></li>
         <% end %>
