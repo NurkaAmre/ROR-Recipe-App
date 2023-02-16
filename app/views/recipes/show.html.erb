@@ -25,9 +25,21 @@
       <div class="mb-0 w-50 p-3 d-flex flex-column align-items-end justify-content-between">
         <div class="d-flex gap-2 mb-5 mt-4">
           <h5>Public</h5>
-          <div class="form-check form-switch">
-            <%= check_box_tag "public_toggle", "1", false, class: "form-check-input", id: "public-toggle" %>
-          </div>
+<div class="form-check form-switch">
+  <%= check_box_tag "public_toggle", "1", false, class: "form-check-input", id: "public-toggle" %>
+</div>
+
+<script>
+  const publicToggle = document.querySelector('#public-toggle');
+  let firstToggle = true;
+
+  publicToggle.addEventListener('change', (event) => {
+    if (firstToggle && event.target.checked) {
+      window.location.href = '<%= public_recipes_path %>';
+    }
+    firstToggle = false;
+  });
+</script>
         </div>
         <h3><%= link_to "Add Ingredients", new_recipe_recipe_food_path(@recipe.id), class: "btn btn-dark text-decoration-none" %></h3>
       </div>
