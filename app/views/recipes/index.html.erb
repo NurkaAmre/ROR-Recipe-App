@@ -13,7 +13,7 @@
       <h3 class="card-title text-decoration-none m-3 text-dark"><%= recipe.name %></h3> 
       <div class="d-flex gap-3"> 
         <h3><%= button_to "Remove", recipe, method: :delete,  class: 'btn btn-warning m-2 text-end', data: { turbo: false }  %></h3>
-        <h3><%= link_to "Show details", recipe , class: "btn btn-warning mt-10 m-2 text-decoration-none" %></h3>
+        <h3><%= link_to "Show details", recipe_path(recipe.id), class: "btn btn-warning mt-10 m-2 text-decoration-none" %></h3>
       </div>
     </div>
     <div class="card-body m-2 w-50">

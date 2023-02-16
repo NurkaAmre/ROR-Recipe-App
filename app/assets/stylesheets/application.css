@@ -78,3 +78,12 @@
 .foods_title h5 {
   width: 25%;
 }
+
+.form-check,
+.form-check-input {
+  cursor: pointer;
+}
+
+.border-none {
+  border: none !important;
+}

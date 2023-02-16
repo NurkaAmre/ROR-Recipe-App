@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div>
+  <div class="field mb-3">
+    <%= form.label :food, style: "display: block" %>
+    <%= form.select :food_id, current_user.foods.map { |food| [food.name, food.id] },
+      { include_blank: true }, class: "w-100 rounded p-2 border-none" %>
+  </div>
+
+  <div class="field mb-3">
     <%= form.label :quantity, style: "display: block" %>
-    <%= form.text_field :quantity %>
+    <%= form.number_field :quantity, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :recipe_id, style: "display: block" %>
-    <%= form.text_field :recipe_id %>
+  <div class="field mb-3">
+    <%= form.select :recipe_id, current_user.recipes.map { |recipe| [recipe.name, recipe.id] },
+      { include_blank: true }, style: "display: block" %>
+    <%= form.number_field :recipe_id, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :food_id, style: "display: block" %>
-    <%= form.text_field :food_id %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+  <div class="btn mb-3 p-0">
+    <%= form.submit "Add ingredient" %>
   </div>
 <% end %>
+

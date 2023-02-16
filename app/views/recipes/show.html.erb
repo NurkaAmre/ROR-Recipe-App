@@ -27,9 +27,11 @@
       <div class="mb-0 w-50 p-3 d-flex flex-column align-items-end justify-content-between">
         <div class="d-flex gap-2 mb-5 mt-4">
           <h5>Public</h5>
-          <input type="checkbox">
+          <div class="form-check form-switch">
+            <%= check_box_tag "public_toggle", "1", false, class: "form-check-input", id: "public-toggle" %>
+          </div>
         </div>
-        <h3><%= link_to "Add Ingredients", '#', class: "btn btn-dark text-decoration-none" %></h3>
+        <h3><%= link_to "Add Ingredients", new_recipe_food_path(@recipe.id), class: "btn btn-dark text-decoration-none" %></h3>
       </div>
     
     </div>
