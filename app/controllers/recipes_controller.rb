@@ -1,11 +1,11 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = current_user.recipes
+    @recipes = current_user.recipes.includes(:user)
   end
 
   def show
     @recipe = Recipe.find(params[:id])
-    @recipe_foods = @recipe.recipe_foods
+    @recipe_foods = @recipe.recipe_foods.includes([:food])
   end
 
   def new
@@ -36,6 +36,6 @@ class RecipesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def recipe_params
-    params.require(:recipe).permit(:name, :description, :public, :preparation_time, :cooking_time)
+    params.require(:recipe).permit(:name, :description, :public, :preparation_time, :public, :cooking_time)
   end
 end

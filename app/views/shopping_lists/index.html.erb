@@ -1,0 +1,33 @@
+<div class="container rounded-top mb-4">
+  <h1 class="mb-4 text-center">Shopping Lists </h1>
+  <div class="d-flex gap-4 my-5 justify-content-center">
+    <h4>Amount of food items to buy: <%= @recipe_foods.count %></h4>
+    <h4>Total price of food items needed: <%= "$#{@total}" %>
+  </div>
+
+  <table class="table">
+  <% if @recipe_foods.empty? %>
+  <p>No ingredients included on recipe yet... </p>
+  <% else %>
+  <thead>
+    <tr class="border border-gray border-2 shadow-lg bg-body-tertiary">
+      <th class="border-end border-gray border-2 px-3">Food</th>
+      <th class="border-end border-gray border-2 px-3">Quantity</th>
+      <th class="border-end border-gray border-2 px-3">Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe_foods.each do |item| %>
+      <tr class="shadow-lg border border-gray border-2 bg-body-tertiary">
+        <td class=" border-end border-gray border-2 p-3"><%= item.food.name %></td>
+        <td class="border-end border-gray border-2 p-3"><%= item.quantity %><%= item.food.measurement_unit %></td>
+        <td class="border-end border-gray border-2 p-3"><%= "$#{item.quantity.to_i * item.food.price}" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+<% end %> 
+</table>
+<div>
+  <%= link_to 'Back to Recipe'.html_safe, recipe_path(@recipe.id), class: "btn btn-warning m-2 text-end delete" %>
+</div>
+</div>

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
   <div class="container-fluid d-flex">
   <%= link_to 'Recipe App', root_path, class: 'navbar-brand'%>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -12,8 +12,8 @@
          <li class="nav-item">
         <%= link_to 'Recipes', recipes_path, class: 'nav-link'%>
         </li>
-        <li class='nav-link'>Public Recipes</li>
-        <li class='nav-link'>Shopping List</li>
+        <li><%= link_to "Public Recipes", public_recipes_path, class: "text-decoration-none nav-link"%></li>
+        <%# <li class='nav-link'>Shopping List</li> %>
         <% if current_user %>
           <li class='nav-link text-white'><%= current_user.name %></li>
         <% end %>
