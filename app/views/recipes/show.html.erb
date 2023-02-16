@@ -68,7 +68,7 @@
           </p>
         </div>
         <h3 class="d-flex">
-          <%= button_to "Modify", food_path, method: :get, class: "btn btn-warning m-2 text-end delete" %> 
+          <p class="btn btn-warning m-2 text-end delete">Modify<p>
           <%= button_to 'Remove', recipe_recipe_food_path(@recipe.id, recipefood.id), class: "btn btn-warning m-2 text-end delete", method: :delete %>
         </h3>
       </div>
