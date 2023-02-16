@@ -19,7 +19,7 @@
         <div class="m-2" style="overflow-wrap: break-word;"> 
           <h5>Steps: </h5><p><%= @recipe.description %></p>
         </div>
-        <h3><%= link_to "Generate shopping list", '#', class: "btn btn-dark mt-10 m-3 text-decoration-none" %></h3>
+        <h3><%= link_to "Generate shopping list", recipe_shopping_lists_path(@recipe), class: "btn btn-dark mt-10 m-3 text-decoration-none" %></h3>
       </div>
       
       <div class="mb-0 w-50 p-3 d-flex flex-column align-items-end justify-content-between">
